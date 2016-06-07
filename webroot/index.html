@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>The Semantic Grid System</title>
+
+    <!-- CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	
+    <!-- JavaScript -->
+	<script src="js/less-1.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-761992-11']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body>
+	<!-- AdPacks.com Ad Code -->
+	<script type="text/javascript">
+	(function(){
+	  var bsa = document.createElement('script');
+	     bsa.type = 'text/javascript';
+	     bsa.async = true;
+	     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+	  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+	})();
+	</script>
+	
+	<!-- GitHub Ribbon -->
+	<a id="github-ribbon" href="https://github.com/twigkit/semantic.gs/"> </a>
+	
+	<header id="hero">
+		<div class="center">
+			
+			<section id="overview">
+				<h1>
+					<span class="the">The</span>
+					Semantic
+					<span class="gridsystem">Grid System</span>
+				</h1>
+				<blockquote><p>Page layout <em>for tomorrow</em>.</p></blockquote>
+				<p>Set column and gutter <strong>widths</strong>, choose the number of <strong>columns</strong>, and switch between <strong>pixels</strong> and <strong>percentages</strong>.</p>
+				<p><strong><em>All without any .grid_x classes in your markup.</em></strong> Oh, and did we mention it's responsive?</p>
+				<p>Runs on <a href="http://lesscss.org/">LESS</a>, <a href="http://sass-lang.com/">SCSS</a>, or <a href="http://learnboost.github.com/stylus/">Stylus</a>. Read up on <a href="http://coding.smashingmagazine.com/2011/08/23/the-semantic-grid-system-page-layout-for-tomorrow/">Smashing Mag</a>.</p>
+			</section>
+	
+			<section id="example">
+				<h3>Declarative HTML</h3>
+<pre>
+&lt;header&gt;...&lt;/header&gt;
+&lt;article&gt;...&lt;/article&gt;
+&lt;aside&gt;...&lt;/aside&gt;
+</pre>
+				<h3>Presentational CSS</h3>
+<pre>
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+header { .column(12); }
+article { .column(9); }
+aside { .column(3); }
+
+@media (max-device-width: 960px) {
+   article { .column(12); }
+   aside { .column(12); }
+}
+</pre>
+			</section>
+			
+		</div>
+	</header>
+	
+	<nav>
+		<div class="center">
+			<div id="download">
+				<a href="https://github.com/twigkit/semantic.gs/zipball/master">Download 1.2</a>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="center">
+		<article id="documentation">
+			<h2>View Examples</h2>
+			<ul id="examples">
+				<li><a href="examples/fixed/fixed.html">Fixed Layout</a>
+				<li><a href="examples/fluid/fluid.html">Fluid Layout</a>
+				<li><a href="examples/maxwidth/maxwidth.html">Maximum-width</a>
+				<li><a href="examples/nested/nested.html">Nested Columns</a>
+				<li><a href="examples/responsive/responsive.html">Responsive</a>
+			</ul>
+
+			<h2>Getting Started</h2>
+			<h3>1. Add the resources to your HTML page</h3>
+			<p>Reference your LESS CSS stylesheet and the <a href="http://lesscss.org/">LESS.js</a> script on your HTML page (the stylesheet must appear <em>before</em> the script).</p>
+<pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/screen.less&quot; type=&quot;text/less&quot; media=&quot;screen&quot; /&gt;
+&lt;script src=&quot;js/less-1.1.3.min.js&quot; type=&quot;text/javascript&quot; &gt;&lt;/script&gt;
+</pre>
+			<h3>2. Configure the LESS variables</h3>
+			<p>Inside your stylesheet, import the grid.less file:</p>
+<pre>
+@import 'grid.less';
+</pre>
+			<p>The Semantic Grid defaults to a 12 column, 960 pixel grid system. Customize the columns and gutters by overriding these three variables (<em>after</em> the grid.less import has been declared):</p>
+<pre>
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+</pre>
+			<p>To use a fluid (percentage-based) grid rather than a fixed pixels, simply override one additional variable:</p>
+<pre>
+@total-width: 100%;
+</pre>
+			<h3>3. Rock and roll!</h3>
+			<p>Your layout is about to get a bit more semantic.</p>
+			
+			<h2>Basic Usage</h2>
+			<h3>The HTML</h3>
+			<p>Consider two HTML elements:</p>
+<pre>
+&lt;body&gt;
+   &lt;article&gt;Main&lt;/article&gt;
+   &lt;section&gt;Sidebar&lt;/section&gt;
+&lt;/body&gt;
+</pre>
+			<h3>The stylesheet</h3>
+			<p>To position these elements side by side side, provide the desired number of grid units to the <code>.column()</code> mixin:</p>
+<pre>
+@import 'grid.less';
+
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+article {
+   .column(9);
+}
+section {
+   .column(3);
+}
+</pre>
+			<p><a href="http://semantic.gs/examples/fixed/fixed.html">The result</a> is two side-by-side columns with the original HTML remaining uncompromised.</p>
+
+			<a id="tutorials"></a>
+			<h2>Tutorials</h2>
+			<h3>Fluid layouts</h3>
+			<p>Semantic.gs can work in either pixels or percentages. While it defaults to pixels, <a href="http://semantic.gs/examples/fluid/fluid.html">fluid layouts</a> can be achieved by adding one additional variable: <code>@total-width: 100%;</code>.</p>
+<pre>
+@import 'grid.less';
+
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+@total-width: 100%; // Switch from pixels to percentages
+
+article {
+   .column(9);
+}
+section {
+   .column(3);
+}
+</pre>		
+			<h3>Responsive layouts</h3>
+			<p>The Semantic Grid, with its clean separation between markup and presentation, is an ideal tool for powering <a href="http://semantic.gs/examples/responsive/responsive.html">adaptive layouts</a> using @media queries.</p>
+<pre>
+article {
+   .column(6);
+}
+aside {
+   .column(6);
+}
+
+@media screen and (max-width: 960px) {
+   article {
+      .column(12);
+   }
+   aside {
+      .column(12);
+   }
+}
+</pre>
+			<h3>Nested columns</h3>
+			<p>Multiple levels of <a href="http://semantic.gs/examples/nested/nested.html">nested columns</a> are no problem — even for fluid layouts. Consider this HTML structure:</p>		
+<pre>
+&lt;article&gt;
+   &lt;ul&gt;
+      &lt;li&gt;1&lt;/li&gt;
+      &lt;li&gt;2&lt;/li&gt;
+      &lt;li&gt;3&lt;/li&gt;
+      &lt;li&gt;4&lt;/li&gt;
+      &lt;li&gt;5&lt;/li&gt;
+      &lt;li&gt;6&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/article&gt;
+
+&lt;aside&gt;...&lt;/aside&gt;
+</pre>
+			<p>A <code>.row()</code> mixin must be applied to the containing element of the nested columns. That mixin should contain the number of grid units of its parent (9, in this case), and the same number must be passed into the nested columns as a second parameter (<code>.column(3,9)</code> in the example below). Note that This is the most complicated feature of Semantic.gs, but nested columns in fluid layouts aren't generally supported by any other grid system, so one additional parameter is a small price to pay.</p>
+<pre>
+article {
+   .column(9);
+
+   ul {
+      .row(9);
+
+      li {
+         .column(3,9);
+      }
+   }
+}
+aside {
+   .column(3);
+}
+</pre>
+			<h3>Push and Pull</h3>
+			<p>The <code>.push()</code> and <code>.pull()</code> mixins allow you apply left and right indents to your columns. Here is an <a href="http://semantic.gs/examples/pushpull/pushpull.html">example page</a>.</p>
+<pre>
+// LESS
+article {
+   .push(2);
+}
+
+// Compiled CSS
+article {
+   margin-left: 170px;
+}
+</pre>
+<pre>
+// LESS
+article {
+   .pull(2);
+}
+
+// Compiled CSS
+article {
+   margin-right: 170px;
+}
+</pre>
+
+			<h2>How It Works</h2>
+			<h3>Powered by LESS mixins</h3>
+			<p>The Semantic Grid avoids presentational CSS classes in the HTML markup itself. Instead, it uses a parametric <a href="http://lesscss.org/#-mixins">LESS mixin</a> (or a <a href="http://sass-lang.com/">SCSS</a> or <a href="http://learnboost.github.com/stylus/">Stylus mixin</a>, depending on which framework you prefer) to control the layout <em>in the stylesheet</em> where it belongs. Below is an example of the LESS syntax, and the resulting CSS (which is remarkably similar to the <a href="http://1kbgrid.com/">1KB CSS Grid</a>):</p>
+<pre>
+// This LESS rule...
+article {
+   .column(9);
+}
+
+// Is compiled to...
+article {
+   display: inline;
+   float: left;
+   width: 700px;
+   margin: 0 10px;
+}
+</pre>
+			<h3>Browser compatibility</h3>
+			<p>The Semantic Grid System supports modern browsers as well as Internet Explorer 6 and up. Semantic.gs uses the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro clearfix</a> to clear floats, which supports Firefox 3.5+, Safari 4+, Chrome, Opera 9+, and IE6+, though support for earlier versions of FireFox could easily be achieved by adding the `overflow: hidden;` method to the `.row` mixin.</p>
+			<p>The <a href="http://tylertate.com/blog/2012/01/05/subpixel-rounding.html">sub-pixel rounding issue</a> is a well-known problem affecting fluid layouts in Internet Explorer 6 and 7. As of version 1.2, Semantic.gs includes a workaround to this issue (though it's commented out by default).</p>
+			<h2>Using in Production</h2>
+			<h3>Switching from client-side to desktop or server compiling</h3>
+			<p>While the LESS JavaScript compiler is convenient during early-stage development, it's best to stay away from client-side compiling once your site goes into production. For starters, you don't want your site's appearance to be dependent on JavaScript. Second, compiling LESS in the browser can take a few hundred milliseconds; no big deal for development, but unnecessary overhead for production environments. Instead, use the <a href="http://incident57.com/less/">LESS.app</a> desktop application to compile .less files into .css, or use one of the several server-side compilers available.</p>
+			
+		</article>
+		<aside id="advert">
+			<div class="ad">
+				<!-- AdPacks.com Zone Code -->
+				<div id="bsap_1259205" class="bsarocks bsap_25779f8aebf23dd2e6c5b30743833cb3"></div>
+				<a href="http://adpacks.com" id="bsap_aplink">via Ad Packs</a>
+				<!-- End AdPacks.com Zone Code -->
+			</div>
+		</aside>
+
+	</div>
+
+	<footer id="bottom">
+		<section>
+			<p>Brought to you by the friendly guys at <a href="http://twigkit.com/">TwigKit</a>. Follow <a href="http://twitter.com/tylertate">Tyler Tate</a> on Twitter.</p>
+		</section>
+	</footer>
+
+</body>
+</html>

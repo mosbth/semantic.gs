@@ -1,6 +1,6 @@
-@import '../../stylesheets/reset.css';
-@import '../../stylesheets/demo.css';
-@import '../../stylesheets/less/grid.less';
+@import '../../css/reset.css';
+@import '../../css/demo.css';
+@import '../../../grid/grid.less';
 
 
 //////////
@@ -22,7 +22,6 @@
 
 // center the contents
 div.center {
-	max-width: 960px;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -32,10 +31,21 @@ header#top {
 	margin-bottom: 1em;
 }
 
-// main column & sidebar
+// main column
 #maincolumn {
 	.column(9);
+	
+	ul#boxes {
+		.row(9);
+
+		li {
+			.column(3,9);
+			margin-bottom: 1em;
+		}
+	}
 }
+
+// sidebar
 #sidebar {
 	.column(3);
 }

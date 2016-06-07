@@ -1,13 +1,30 @@
-#About
-The Semantic Grid System is a modern approach to the CSS grid. It allows you to set column and gutter widths, choose the number of columns, switch between pixels and percentages, and achieve responsive layouts, all without any unsemantic .grid_x classes in your markup. By default it's powered by [LESS.js](http://lesscss.org/), but also supports [SCSS](http://sass-lang.com/) and [Stylus](http://learnboost.github.com/stylus/).
+The Semantic Grid
+========================================
 
-It lives on the web at [tylertate.github.io/semantic.gs/](http://tylertate.github.io/semantic.gs/).
+This is a fork of the project "[The Semantic Grid](https://github.com/tylertate/semantic.gs)" created by [@tylertate](https://github.com/tylertate).
 
-#Issues
-If you spot any issues or have ideas for improvement, feel free to [file a ticket](https://github.com/twigkit/semantic.gs/issues) or fork on [GitHub](https://github.com/twigkit/semantic.gs) and issue a pull request.
+The initial project has [not had to much update lately](https://github.com/tylertate/semantic.gs/issues) and it occasionally lost its original website, so I decided to make a fork of it to be able to continue use it.
 
-#License
-Licensed under Apache 2.0. See [LICENSE](https://github.com/twigkit/semantic.gs/blob/master/LICENSE.txt)
+I use it for own projects and in my education.
 
-#Created by
-The Semantic Grid System was built by [Tyler Tate](http://twitter.com/tylertate/) at [TwigKit](http://twigkit.com/).
+[Review the examples](webroot) on a copy of the original website.
+
+Read the original [README.md](old/README.md).
+
+
+
+Revision history
+----------------------------------------
+
+v1.4.0 (2016-06-07)
+
+* Not an actual release, just a baseline to start from.
+* Added website to show off examples. All examples resides in `webroot`.
+* Renamed and rearranged files to separate the actual grid from the examples on how to use it.
+
+
+
+```                                                     
+ .                                                      
+..:  2016 Mikael Roos, mos@dbwebb.se
+```                                                     

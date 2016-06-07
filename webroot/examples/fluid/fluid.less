@@ -1,6 +1,6 @@
-@import '../../stylesheets/reset.css';
-@import '../../stylesheets/demo.css';
-@import '../../stylesheets/less/grid.less';
+@import '../../css/reset.css';
+@import '../../css/demo.css';
+@import '../../../grid/grid.less';
 
 
 //////////
@@ -20,32 +20,15 @@
 // LAYOUT //
 ////////////
 
-// center the contents
-div.center {
-	margin: 0 auto;
-	overflow: hidden;
-}
-
 // header
 header#top {
 	margin-bottom: 1em;
 }
 
-// main column
+// main column & sidebar
 #maincolumn {
 	.column(9);
-	
-	ul#boxes {
-		.row(9);
-
-		li {
-			.column(3,9);
-			margin-bottom: 1em;
-		}
-	}
 }
-
-// sidebar
 #sidebar {
 	.column(3);
 }
